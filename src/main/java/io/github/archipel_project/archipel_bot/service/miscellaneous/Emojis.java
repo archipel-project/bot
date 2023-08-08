@@ -51,12 +51,16 @@ public enum Emojis {
         return this.emoji;
     }
 
+    public String get() {
+        return this.emoji.getName();
+    }
+
     public String getDisplay() {
         return this.getDisplay(true);
     }
 
-    public String getDisplay(final boolean displaySpace) {
-        return this.getEmoji().getName() + (displaySpace ? Emojis.BLANK.getEmoji().getName() : "");
+    public String getDisplay(final boolean withSpace) {
+        return this.get() + (withSpace ? Emojis.BLANK.get() : "");
     }
 
     public String getUnicode() {

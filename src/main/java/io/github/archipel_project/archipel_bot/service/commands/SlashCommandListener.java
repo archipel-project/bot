@@ -14,14 +14,14 @@ public class SlashCommandListener extends ListenerAdapter {
 
         this.handler.register(new PingModule());
         this.handler.register(new HelpModule());
-        this.handler.setup(jda);
+
+        this.handler.finalise(jda);
 
         for (final String command : this.handler.getCommands().keySet()) {
             final var listener = this.handler.getCommand(command).getListener();
             if (listener == null) continue;
 
             jda.addEventListener(listener);
-            System.out.printf("- Listener: \"%s\"\n", listener.getClass().getSimpleName());
         }
     }
 
