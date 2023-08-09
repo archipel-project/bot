@@ -76,12 +76,8 @@ public class GithubModule implements Command {
         embed.setFooter("Archivist", ConfigUtils.getIcon()).setTimestamp(Instant.now());
 
         embed.addField(String.format("%sTitle", Emoji.LABEL.getDisplay()), "```%s```".formatted(issue.getTitle()), false);
-        embed.addField(String.format("%sContent", Emoji.PEN.getDisplay()), "```%s```".formatted(issue.getContent()), false);
-        if(state.isClosed()) {
-            embed.addField(String.format("%sState", state.getEmoji().getDisplay()), "```%s - Closed at: %s:```".formatted(state.getState(), issue.getClosedAt()), false);
-        } else {
-            embed.addField(String.format("%sState", state.getEmoji().getDisplay()), "```%s - Created at: %s:```".formatted(state.getState(), issue.getCreatedAt()), false);
-        }
+        if (issue.getContent() != null) embed.addField(String.format("%sContent", Emoji.PEN.getDisplay()), "```%s```".formatted(issue.getContent()), false);
+        embed.addField(String.format("%sState", state.getEmoji().getDisplay()), "```%s - Created at: %s:```".formatted(state.getState(), issue.getCreatedAt()), false);
 
         return embed;
     }
