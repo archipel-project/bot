@@ -40,9 +40,9 @@ compileJava {
 
 jar {
     manifest.attributes(
-        'Main-Class': "io.github.archipel_project.archipel_bot.app.Application",
+        'Main-Class': "io.github.archipel_project.archipel_bot.Archivist",
         'Version': "0.1",
         'Title': "Archivist",
-        'Author': "Archipel",
+        'Author': "Archipel project",
     )
 }

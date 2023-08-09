@@ -1,4 +1,4 @@
-package io.github.archipel_project.archipel_bot.service.miscellaneous.embed;
+package io.github.archipel_project.archipel_bot.miscellaneous.embed;
 
 public class EmbedField {
     final String primary;

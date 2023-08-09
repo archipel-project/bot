@@ -1,15 +1,15 @@
-package io.github.archipel_project.archipel_bot.service.modules;
+package io.github.archipel_project.archipel_bot.modules;
 
-import io.github.archipel_project.archipel_bot.service.commands.SlashCommand;
-import io.github.archipel_project.archipel_bot.service.miscellaneous.embed.EmbedHelper;
+import io.github.archipel_project.archipel_bot.commands.Command;
+import io.github.archipel_project.archipel_bot.miscellaneous.embed.EmbedHelper;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 
 import java.util.concurrent.TimeUnit;
 
-public class PingModule implements SlashCommand {
+public class PingModule implements Command {
     @Override
-    public String getCommand() {
+    public String getName() {
         return "ping";
     }
 

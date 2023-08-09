@@ -1,4 +1,4 @@
-package io.github.archipel_project.archipel_bot.service.utils;
+package io.github.archipel_project.archipel_bot.utils;
 
 import io.github.cdimascio.dotenv.Dotenv;
 

@@ -1,12 +1,16 @@
-package io.github.archipel_project.archipel_bot.service.miscellaneous;
+package io.github.archipel_project.archipel_bot.miscellaneous;
 
-import net.dv8tion.jda.api.entities.emoji.Emoji;
-
-public enum Emojis {
+public enum Emoji {
     BLANK("U+2800"),
     CRY_FACE("U+1F622"),
     CRYSTAL_BALL("U+1F52E"),
     FIRE("U+1F525"),
+    RED_CIRCLE("U+1F534"),
+    BROWN_CIRLCE("U+1F7E4"),
+    GREEN_CIRCLE("U+1F7E2"),
+    PURPLE_CIRCLE("U+1F7E3"),
+    BLUE_CIRCLE("U+1F535"),
+    YELLOW_CIRCLE("U+1F7E1"),
     BOOM("U+1F4A5"),
     STAR_FACE("U+1F929"),
     STAR("U+1F31F"),
@@ -37,17 +41,21 @@ public enum Emojis {
     PUSHPIN("U+1F4CC"),
     SHOPPING_CART("U+1F6D2"),
     BOOKMARK_TABS("U+1F4D1"),
+    LINK("U+1F517"),
+    LABEL("U+1F3F7"),
+    FILE_FOLDER("U+1F4C1"),
+    PEN("U+1F58B"),
     THOUGHT_BALLOON("U+1F4AD");
 
-    private final Emoji emoji;
+    private final net.dv8tion.jda.api.entities.emoji.Emoji emoji;
     private final String unicode;
 
-    Emojis(final String unicode) {
+    Emoji(final String unicode) {
         this.unicode = unicode;
-        this.emoji = Emoji.fromFormatted(unicode);
+        this.emoji = net.dv8tion.jda.api.entities.emoji.Emoji.fromFormatted(unicode);
     }
 
-    public Emoji getEmoji() {
+    public net.dv8tion.jda.api.entities.emoji.Emoji getEmoji() {
         return this.emoji;
     }
 
@@ -60,7 +68,7 @@ public enum Emojis {
     }
 
     public String getDisplay(final boolean withSpace) {
-        return this.get() + (withSpace ? Emojis.BLANK.get() : "");
+        return this.get() + (withSpace ? Emoji.BLANK.get() : "");
     }
 
     public String getUnicode() {
