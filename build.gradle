@@ -1,14 +1,18 @@
 plugins {
+    id 'base'
     id 'java'
     id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
-tasks.shadowJar.configure {
-    classifier = null
+shadowJar {
+    archiveClassifier = ''
+}
+
+base {
+    archivesName = "Archivist"
 }
 
 group 'io.github.archipel_project.archipel_bot'
-archivesBaseName = "Archivist"
 
 repositories {
     mavenCentral()
