@@ -20,7 +20,6 @@ import okhttp3.Request;
 import java.io.IOException;
 import java.time.Instant;
 import java.util.List;
-import java.util.stream.StreamSupport;
 
 public class GithubModule implements Command {
     @Override
