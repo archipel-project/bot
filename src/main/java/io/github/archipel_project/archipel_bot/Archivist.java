@@ -26,7 +26,6 @@ public class Archivist {
 
     public void setup() {
         this.jda.addEventListener(this.listener);
-        this.jda.addEventListener(new IssueListener());
 
         this.listener.getCommands().forEach(c -> {
             final var listeners = c.getListeners();

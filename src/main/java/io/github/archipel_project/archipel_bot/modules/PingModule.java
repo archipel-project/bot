@@ -1,10 +1,9 @@
 package io.github.archipel_project.archipel_bot.modules;
 
 import io.github.archipel_project.archipel_bot.commands.Command;
-import io.github.archipel_project.archipel_bot.miscellaneous.embed.EmbedHelper;
+import io.github.archipel_project.archipel_bot.utils.ConfigUtils;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
-
 import java.util.concurrent.TimeUnit;
 
 public class PingModule implements Command {
@@ -29,10 +28,18 @@ public class PingModule implements Command {
     }
 
     private EmbedBuilder createFirst() {
-        return EmbedHelper.createEmbed("Latency: Calculating...");
+        final EmbedBuilder embed = new EmbedBuilder();
+        embed.setColor(ConfigUtils.PRIMARY_COLOR);
+        embed.setTitle("Calculating latency...");
+
+        return embed;
     }
 
     private EmbedBuilder createFinal(final long prev) {
-        return EmbedHelper.createEmbed(String.format("Pong! Latency: %d ms", System.currentTimeMillis() - prev));
+        final EmbedBuilder embed = new EmbedBuilder();
+        embed.setColor(ConfigUtils.PRIMARY_COLOR);
+        embed.setTitle("Pong! Latency: %d ms".formatted(System.currentTimeMillis() - prev));
+
+        return embed;
     }
 }
