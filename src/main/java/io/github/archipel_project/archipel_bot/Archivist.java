@@ -30,7 +30,7 @@ public class Archivist {
         this.listener.getCommands().forEach(c -> {
             final var listeners = c.getListeners();
             if (listeners == null) return;
-            this.jda.addEventListener(listeners);
+            this.jda.addEventListener(listeners.toArray());
         });
 
         this.listener.setup();
