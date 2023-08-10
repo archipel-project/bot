@@ -1,4 +1,4 @@
-package io.github.archipel_project.archipel_bot.models;
+package io.github.archipel_project.archipel_bot.archivist.models;
 
 import com.google.gson.annotations.SerializedName;
 

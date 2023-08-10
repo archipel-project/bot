@@ -1,4 +1,4 @@
-package io.github.archipel_project.archipel_bot.commands;
+package io.github.archipel_project.archipel_bot.archivist.commands;
 
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;

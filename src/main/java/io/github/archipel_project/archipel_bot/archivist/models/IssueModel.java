@@ -1,7 +1,7 @@
-package io.github.archipel_project.archipel_bot.models;
+package io.github.archipel_project.archipel_bot.archivist.models;
 
 import com.google.gson.annotations.SerializedName;
-import io.github.archipel_project.archipel_bot.utils.ConstantUtils;
+import io.github.archipel_project.archipel_bot.archivist.utils.ConstantUtils;
 
 import java.time.Instant;
 import java.time.ZoneId;

@@ -1,4 +1,4 @@
-package io.github.archipel_project.archipel_bot.commands;
+package io.github.archipel_project.archipel_bot.archivist.commands;
 
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
@@ -30,7 +30,7 @@ public interface Command {
     }
 
     default List<ListenerAdapter> getListeners(){
-        return null;
+        return new ArrayList<>();
     }
 
     void handle(final SlashCommandInteractionEvent event);

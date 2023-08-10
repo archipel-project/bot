@@ -1,4 +1,4 @@
-package io.github.archipel_project.archipel_bot.utils;
+package io.github.archipel_project.archipel_bot.archivist.utils;
 
 public class ApiPaths {
     public static final String searchIssuePath = "https://api.github.com/search/issues?q=%s+repo:%s/%s";
