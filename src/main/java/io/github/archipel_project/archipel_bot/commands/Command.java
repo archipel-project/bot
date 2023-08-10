@@ -30,7 +30,7 @@ public interface Command {
     }
 
     default List<ListenerAdapter> getListeners(){
-        return null;
+        return new ArrayList<>();
     }
 
     void handle(final SlashCommandInteractionEvent event);

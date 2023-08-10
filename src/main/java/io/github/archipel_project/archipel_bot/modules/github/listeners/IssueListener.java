@@ -22,6 +22,10 @@ public class IssueListener extends ListenerAdapter {
     public void onCommandAutoCompleteInteraction(final CommandAutoCompleteInteractionEvent event) {
         final String command = event.getName();
         final String subCommand = event.getSubcommandName();
+
+        System.out.println(command);
+        System.out.println(subCommand);
+
         if(subCommand == null) return;
 
         if (command.equals("github") && subCommand.equals("issue")) {
