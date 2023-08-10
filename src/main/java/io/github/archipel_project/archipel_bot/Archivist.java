@@ -1,7 +1,6 @@
 package io.github.archipel_project.archipel_bot;
 
 import io.github.archipel_project.archipel_bot.listeners.CommandListener;
-import io.github.archipel_project.archipel_bot.modules.github.listeners.IssueListener;
 import io.github.archipel_project.archipel_bot.utils.ConfigUtils;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -28,9 +27,7 @@ public class Archivist {
         this.jda.addEventListener(this.listener);
 
         this.listener.getCommands().forEach(c -> {
-            final var listeners = c.getListeners();
-            if (listeners == null) return;
-            this.jda.addEventListener(listeners);
+            this.jda.addEventListener(c.getListeners().toArray());
         });
 
         this.listener.setup();
