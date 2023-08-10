@@ -1,7 +1,7 @@
-package io.github.archipel_project.archipel_bot.modules.github.commands;
+package io.github.archipel_project.archipel_bot.archivist.modules.github.commands;
 
-import io.github.archipel_project.archipel_bot.commands.CommandArg;
-import io.github.archipel_project.archipel_bot.commands.SubCommand;
+import io.github.archipel_project.archipel_bot.archivist.commands.CommandArg;
+import io.github.archipel_project.archipel_bot.archivist.commands.SubCommand;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 
 import java.util.List;

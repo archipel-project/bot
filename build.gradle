@@ -12,7 +12,7 @@ base {
     archivesName = "Archivist"
 }
 
-group 'io.github.archipel_project.archipel_bot'
+group 'io.github.archipel_project'
 
 repositories {
     mavenCentral()
@@ -44,7 +44,7 @@ compileJava {
 
 jar {
     manifest.attributes(
-        'Main-Class': "io.github.archipel_project.archipel_bot.Archivist",
+        'Main-Class': "io.github.archipel_project.archipel_bot.Main",
         'Version': "0.1",
         'Title': "Archivist",
         'Author': "Archipel project",

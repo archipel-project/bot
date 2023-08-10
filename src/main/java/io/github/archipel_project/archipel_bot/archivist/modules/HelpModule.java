@@ -1,8 +1,8 @@
-package io.github.archipel_project.archipel_bot.modules;
+package io.github.archipel_project.archipel_bot.archivist.modules;
 
-import io.github.archipel_project.archipel_bot.commands.Command;
-import io.github.archipel_project.archipel_bot.miscellaneous.Emoji;
-import io.github.archipel_project.archipel_bot.utils.ConfigUtils;
+import io.github.archipel_project.archipel_bot.archivist.commands.Command;
+import io.github.archipel_project.archipel_bot.archivist.miscellaneous.Emoji;
+import io.github.archipel_project.archipel_bot.archivist.utils.ConfigUtils;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 

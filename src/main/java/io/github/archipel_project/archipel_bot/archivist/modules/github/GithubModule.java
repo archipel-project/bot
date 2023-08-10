@@ -1,16 +1,16 @@
-package io.github.archipel_project.archipel_bot.modules.github;
+package io.github.archipel_project.archipel_bot.archivist.modules.github;
 
 import com.google.gson.JsonObject;
-import io.github.archipel_project.archipel_bot.commands.SubCommand;
-import io.github.archipel_project.archipel_bot.commands.Command;
-import io.github.archipel_project.archipel_bot.miscellaneous.Emoji;
-import io.github.archipel_project.archipel_bot.models.IssueModel;
-import io.github.archipel_project.archipel_bot.miscellaneous.IssueState;
-import io.github.archipel_project.archipel_bot.modules.github.commands.IssueCommand;
-import io.github.archipel_project.archipel_bot.modules.github.listeners.IssueListener;
-import io.github.archipel_project.archipel_bot.utils.ApiPaths;
-import io.github.archipel_project.archipel_bot.utils.ConfigUtils;
-import io.github.archipel_project.archipel_bot.utils.ConstantUtils;
+import io.github.archipel_project.archipel_bot.archivist.commands.SubCommand;
+import io.github.archipel_project.archipel_bot.archivist.commands.Command;
+import io.github.archipel_project.archipel_bot.archivist.miscellaneous.Emoji;
+import io.github.archipel_project.archipel_bot.archivist.models.IssueModel;
+import io.github.archipel_project.archipel_bot.archivist.miscellaneous.IssueState;
+import io.github.archipel_project.archipel_bot.archivist.modules.github.commands.IssueCommand;
+import io.github.archipel_project.archipel_bot.archivist.modules.github.listeners.IssueListener;
+import io.github.archipel_project.archipel_bot.archivist.utils.ApiPaths;
+import io.github.archipel_project.archipel_bot.archivist.utils.ConfigUtils;
+import io.github.archipel_project.archipel_bot.archivist.utils.ConstantUtils;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;

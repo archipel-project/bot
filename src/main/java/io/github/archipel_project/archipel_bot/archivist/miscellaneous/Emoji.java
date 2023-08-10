@@ -1,4 +1,4 @@
-package io.github.archipel_project.archipel_bot.miscellaneous;
+package io.github.archipel_project.archipel_bot.archivist.miscellaneous;
 
 public enum Emoji {
     BLANK("U+2800"),

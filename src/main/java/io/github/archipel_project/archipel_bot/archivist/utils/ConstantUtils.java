@@ -1,4 +1,4 @@
-package io.github.archipel_project.archipel_bot.utils;
+package io.github.archipel_project.archipel_bot.archivist.utils;
 
 import com.google.gson.Gson;
 

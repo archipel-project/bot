@@ -1,11 +1,11 @@
-package io.github.archipel_project.archipel_bot.modules.github.listeners;
+package io.github.archipel_project.archipel_bot.archivist.modules.github.listeners;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import io.github.archipel_project.archipel_bot.models.IssueModel;
-import io.github.archipel_project.archipel_bot.models.RepositoryModel;
-import io.github.archipel_project.archipel_bot.utils.ApiPaths;
-import io.github.archipel_project.archipel_bot.utils.ConstantUtils;
+import io.github.archipel_project.archipel_bot.archivist.models.IssueModel;
+import io.github.archipel_project.archipel_bot.archivist.models.RepositoryModel;
+import io.github.archipel_project.archipel_bot.archivist.utils.ApiPaths;
+import io.github.archipel_project.archipel_bot.archivist.utils.ConstantUtils;
 import net.dv8tion.jda.api.events.interaction.command.CommandAutoCompleteInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.interactions.commands.Command;
@@ -22,9 +22,6 @@ public class IssueListener extends ListenerAdapter {
     public void onCommandAutoCompleteInteraction(final CommandAutoCompleteInteractionEvent event) {
         final String command = event.getName();
         final String subCommand = event.getSubcommandName();
-
-        System.out.println(command);
-        System.out.println(subCommand);
 
         if(subCommand == null) return;
 
