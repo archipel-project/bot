@@ -10,6 +10,8 @@ name: Java CI with Gradle
 on:
   push:
     branches: [ "main" ]
+    tags:
+      - [ "*" ]
   pull_request:
     branches: [ "main" ]
 
@@ -29,7 +31,31 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+
       - name: Build with Gradle
         uses: gradle/gradle-build-action@v2
         with:
           arguments: build
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          body: |
+            Auto-generated release notes and changelog.
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifact
+          path: build/libs/*.jar
