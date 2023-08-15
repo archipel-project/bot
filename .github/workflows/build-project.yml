@@ -63,9 +63,17 @@ jobs:
         with:
           arguments: build
 
+      - name: Get tag
+        id: tag
+        uses: devops-actions/action-get-tag
+        if: startsWith(github.ref, 'refs/heads/v')
+        with:
+          default: v0.0.0
+
       - name: Rename artifact to use tag as version
+        if: startsWith(github.ref, 'refs/heads/v')
         run: |
-          mv build/libs/*.jar build/libs/archivist-bot-$(echo $GITHUB_REF | sed -e 's/refs\/tags\/v//').jar
+          mv build/libs/*.jar build/libs/archivist-${{steps.tag.outputs.tag}}.jar
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
