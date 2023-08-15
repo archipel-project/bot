@@ -22,6 +22,7 @@ jobs:
   create_changelog:
     name: Generate changelog
     runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/v')
     steps:
       - name: Get previous tag
         id: previous_tag
@@ -58,13 +59,25 @@ jobs:
           distribution: 'temurin'
 
       - name: Build with Gradle
-        uses: gradle/gradle-build-action@v2
+        uses: gradle/gradle-build-action@>=v2.4.2
         with:
           arguments: build
+
+      - name: Rename artifact to use tag as version
+        run: |
+          mv build/libs/*.jar build/libs/archivist-bot-$(echo $GITHUB_REF | sed -e 's/refs\/tags\/v//').jar
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        if: startsWith(github.ref, 'refs/heads/v')
+        with:
+          name: artifact
+          path: build/libs/*.jar
 
   release:
     needs: build
     runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/v')
 
     steps:
       - name: Create Release

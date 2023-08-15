@@ -31,9 +31,6 @@ dependencies {
     // https://mvnrepository.com/artifact/io.github.cdimascio/java-dotenv
     implementation 'io.github.cdimascio:java-dotenv:5.3.1'
 
-    // https://mvnrepository.com/artifact/redis.clients/jedis
-    implementation 'redis.clients:jedis:4.3.1'
-
     // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
     implementation 'org.slf4j:slf4j-api:2.0.7'
 }
