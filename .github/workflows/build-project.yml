@@ -48,7 +48,6 @@ jobs:
             {{__unknown__}}
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -65,13 +64,14 @@ jobs:
           arguments: build
 
       - name: Rename artifact to use tag as version
-        if: startsWith(github.ref, 'refs/heads/v')
+        if: startsWith(github.ref, 'refs/tags/v')
         run: |
           mv build/libs/*.jar build/libs/archivist-${{github.ref_name}}.jar
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
-        if: startsWith(github.ref, 'refs/heads/v')
+        uses: actions/upload-artifact@v3
+        if: startsWith(github.ref, 'refs/tags/v')
+        id: artifact
         with:
           name: artifact
           path: build/libs/*.jar
@@ -82,23 +82,23 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/v')
 
     steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: artifact
+          path: build/libs
+
       - name: Create Release
         id: create_release
-        uses: actions/create-release@v1
+        uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+          name: Release ${{ github.ref_name }}
           draft: false
           body: |
             ${{ steps.changelog.outputs.compareurl }}
 
             ${{ steps.changelog.outputs.changelog }}
-
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: artifact
-          path: build/libs/*.jar
+          files: |
+            build/libs/*.jar
