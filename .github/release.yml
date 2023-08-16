@@ -1,0 +1,27 @@
+# .github/release.yml
+
+changelog:
+  exclude:
+    labels:
+      - ci
+      - documentation
+      - invalid
+      - question
+      - wontfix
+      - duplicate
+      - good first issue
+      - help wanted
+    authors:
+      - octocat
+  categories:
+    - title: Breaking Changes 🛠
+      labels:
+        - Semver-Major
+        - breaking-change
+    - title: Exciting New Features 🎉
+      labels:
+        - Semver-Minor
+        - enhancement
+    - title: Other Changes
+      labels:
+        - "*"
